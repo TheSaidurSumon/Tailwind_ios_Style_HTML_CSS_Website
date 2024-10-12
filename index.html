@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Style Website with Tailwind CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #F2F2F7; /* Light background color */
+             /* Adjust based on the navbar height */
+        }
+        footer {
+            background-color: #EFEFF4; /* Light grey */
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .carousel-item:not(.active) {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed w-full z-10">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">iOS Style</span>
+            </a>
+            <button id="navbar-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="#hero" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+                    </li>
+                    <li>
+                        <a href="#services" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="flex items-center justify-center h-screen bg-blue-700 text-white text-center">
+        <div>
+            <h1 class="text-5xl font-bold">Welcome to Our Website</h1>
+            <p class="mt-4 text-xl">Discover amazing services and solutions.</p>
+            <a href="#services" class="mt-6 inline-block bg-white text-blue-700 rounded-full py-3 px-6 font-semibold">Get Started</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-screen-xl mx-auto text-center">
+            <h2 class="text-3xl font-bold">About Us</h2>
+            <p class="mt-4 text-gray-700">We are a team of professionals dedicated to providing the best services.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-100">
+        <div class="max-w-screen-xl mx-auto text-center">
+            <h2 class="text-3xl font-bold">Our Services</h2>
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow">
+                    <h3 class="text-xl font-semibold">Service 1</h3>
+                    <p class="mt-2 text-gray-600">Description of service 1.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow">
+                    <h3 class="text-xl font-semibold">Service 2</h3>
+                    <p class="mt-2 text-gray-600">Description of service 2.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow">
+                    <h3 class="text-xl font-semibold">Service 3</h3>
+                    <p class="mt-2 text-gray-600">Description of service 3.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+    <div class="max-w-screen-xl mx-auto text-center">
+        <h2 class="text-3xl font-bold">Our Portfolio</h2>
+        <p class="mt-4 text-gray-700">Check out some of our recent works.</p>
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="p-6 bg-gray-100 rounded-lg shadow">
+                <img src="https://via.placeholder.com/300" alt="Project 1" class="rounded-md mx-auto">
+                <h3 class="mt-2 text-lg font-semibold">Project 1</h3>
+            </div>
+            <div class="p-6 bg-gray-100 rounded-lg shadow">
+                <img src="https://via.placeholder.com/300" alt="Project 2" class="rounded-md mx-auto">
+                <h3 class="mt-2 text-lg font-semibold">Project 2</h3>
+            </div>
+            <div class="p-6 bg-gray-100 rounded-lg shadow">
+                <img src="https://via.placeholder.com/300" alt="Project 3" class="rounded-md mx-auto">
+                <h3 class="mt-2 text-lg font-semibold">Project 3</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+    <!-- Testimonial Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-screen-xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-10">Testimonials</h2>
+            <div class="relative">
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <p class="text-lg italic">"This service is amazing! I can't recommend it enough!"</p>
+                            <h3 class="mt-4 font-semibold">- John Doe</h3>
+                        </div>
+                        <div class="carousel-item">
+                            <p class="text-lg italic">"A fantastic experience from start to finish!"</p>
+                            <h3 class="mt-4 font-semibold">- Jane Smith</h3>
+                        </div>
+                        <div class="carousel-item">
+                            <p class="text-lg italic">"Incredible quality and support!"</p>
+                            <h3 class="mt-4 font-semibold">- Bob Johnson</h3>
+                        </div>
+                    </div>
+                </div>
+                <button id="prev" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-blue-700 text-white p-2 rounded-full">❮</button>
+                <button id="next" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-blue-700 text-white p-2 rounded-full">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="max-w-screen-xl mx-auto text-center">
+            <h2 class="text-3xl font-bold">Contact Us</h2>
+            <form class="mt-8 max-w-lg mx-auto">
+                <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 border rounded" required>
+                <input type="email" placeholder="Your Email" class="w-full p-3 mb-4 border rounded" required>
+                <textarea placeholder="Your Message" class="w-full p-3 mb-4 border rounded" rows="4" required></textarea>
+                <button type="submit" class="bg-blue-700 text-white py-3 px-6 rounded-full">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10">
+        <div class="max-w-screen-xl mx-auto text-center">
+            <p class="text-gray-600">&copy; 2024 My Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Navbar Toggle -->
+    <script>
+        const navbarToggle = document.getElementById('navbar-toggle');
+        const navbarDefault = document.getElementById('navbar-default');
+
+        navbarToggle.addEventListener('click', () => {
+            navbarDefault.classList.toggle('hidden');
+        });
+    </script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const items = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
+
+        document.getElementById('next').addEventListener('click', () => {
+            items[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % items.length;
+            items[currentIndex].classList.add('active');
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            items[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            items[currentIndex].classList.add('active');
+        });
+    });
+    </script>
+</body>
+</html>
