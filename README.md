@@ -1,6 +1,4 @@
-# Tailwind_ios_Style_HTML_CSS_Website
-
-# iOS Style Website
+# iOS Style Website With Tailwind
 
 This project is a modern, iOS-inspired website built using **HTML**, **CSS**, and **Tailwind CSS**. The site includes a navigation bar, hero section, services, portfolio, testimonials, and contact form. It also features a smooth carousel for testimonials and hover animations for an interactive user experience.
 
